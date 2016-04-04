@@ -3,7 +3,7 @@ var twoFiveWorkTime = 1500;
 var fiveTwoWorkTime = 3120;
 var fiveMinBreak = 300;
 var oneSevenMinBreak = 1020;
-
+var thirtyMinBreak = 1800;
 
 var blocTimeMikeMedis = angular.module('blocTimeMikeMedis', ['firebase', 'ui.router']);
 
@@ -63,10 +63,11 @@ blocTimeMikeMedis.controller('timeController', [
 
 					if (!$scope.breakTime) {
 						projects++;
+						console.log(projects)
 						$scope.breakTime = true;
 
-						if ($scope.counter = fiveTwoWorkTime) {
-							$scope.counter = fiveMinBreak;
+						if (projects % 4 === 0) {
+							$scope.counter = thirtyMinBreak;
 							$scope.isTimeRunning = false;
 						} else {
 							$scope.counter = fiveMinBreak;
