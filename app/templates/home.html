@@ -1,5 +1,6 @@
 <section>
 	<div ng-controller="timeController" class="time">
+		<h1 ng-show="breakTime">Take yourself a break!!</h1>
 		<h1 ng-bind="counter | timeCode"></h1>
 		<div ng-show="!isTimeRunning && !breakTime">
 			<button ng-click="startTime()">Let's Start Working</button>
