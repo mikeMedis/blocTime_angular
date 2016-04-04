@@ -92,6 +92,7 @@ blocTimeMikeMedis.controller('timeController', [
 blocTimeMikeMedis.filter('timeCode', function(){
 	return function(seconds) {
 		seconds = Number.parseFloat(seconds);
+
 		var wholeSeconds = Math.floor(seconds);
 		var minutes = Math.floor(wholeSeconds / 60);
 
