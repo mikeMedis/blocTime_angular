@@ -1,11 +1,14 @@
 <section>
 	<div ng-controller="timeController" class="time">
 		<h1 ng-bind="counter | timeCode"></h1>
-		<div ng-show="!isTimeRunning">
+		<div ng-show="!isTimeRunning && !breakTime">
 			<button ng-click="startTime()">Let's Start Working</button>
 		</div>
 		<div ng-show="isTimeRunning">
-			<button ng-click="stopAndReset()">Reset</button>
+			<button ng-click="resetTime()">Reset</button>
+		</div>
+		<div ng-show="breakTime && !isTimeRunning">
+			<button ng-click="startTime()">We could Take a Break</button>
 		</div>
 	</div>
 </section>
