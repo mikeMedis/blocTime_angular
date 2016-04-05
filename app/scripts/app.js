@@ -1,3 +1,4 @@
+var blocTimeMikeMedis = angular.module('blocTimeMikeMedis', ['firebase', 'ui.router']);
 
 var twoFiveWorkTime = 1500;
 var fiveTwoWorkTime = 3120;
@@ -5,7 +6,14 @@ var fiveMinBreak = 300;
 var oneSevenMinBreak = 1020;
 var thirtyMinBreak = 1800;
 
-var blocTimeMikeMedis = angular.module('blocTimeMikeMedis', ['firebase', 'ui.router']);
+// var twoFiveWorkTime = 5;
+// var fiveMinBreak = 3;
+// var thirtyMinBreak = 9;
+
+var dingNoise = new buzz.sound("/assets/sounds/gunDing.mp3", {
+	preload: true
+});
+
 
 blocTimeMikeMedis.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 
@@ -59,6 +67,7 @@ blocTimeMikeMedis.controller('timeController', [
 				$scope.counter--;
 				if ($scope.counter == 0) {
 					$interval.cancel(startProject);
+					dingNoise.play();
 					$scope.isTimeRunning = false;
 
 					if (!$scope.breakTime) {
