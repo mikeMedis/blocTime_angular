@@ -4,11 +4,12 @@
 	<meta charset="UTF-8">
 	<title>Bloc Time</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="/styles/normalize.css">
 	<link rel="stylesheet" href="/styles/style.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	<h2>Bloc Time</h2>
 
 	<ui-view></ui-view>
 
@@ -18,5 +19,9 @@
 	<script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
 	<script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
 	<script src="/scripts/app.js"></script>
+	<script src="/scripts/controllers/HomeCtrl.js"></script>
+	<script src="/scripts/directives/timer.js"></script>
+	<script src="/scripts/factories/Tasks.js"></script>
+	<script src="/scripts/filters/timeCode.js"></script>
 </body>
 </html>
