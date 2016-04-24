@@ -1,14 +1,41 @@
-<aside>
-	<h3>Task History</h3>
-	<form ng-submit="addTask()" ng-controller="HomeCtrl">
-		<input type="text" ng-model="newTask">
-		<input type="submit">
-	</form>
-	<ul>
-		<li ng-repeat="task in allTasks | orderBy: ' -reverse'">
-			{{task.name}}
-		</li>
-	</ul>
-	<!-- <button ng-click="deleteTasks()">Delete</button> -->
-</aside>
+<!DOCTYPE html>
+<html>
+<head>
+	<div class="container-fluid">
+		<h3 class="text-center">Bloc Time<small> time to get things done! </small></h3>
+
+		<div class="input-group" ng-controller="HomeCtrl">
+			<input type="text"  class="form-control" placeholder="Add New Task Here ..." ng-model="newTask">
+			<span class="input-group-btn">
+				<button class="btn btn-info" type="button" ng-click="addTask()"><span class="glyphicon glyphicon-plus"></span> Add Task</button>
+			</span>
+		</div>
+	</head>
+</br>
+<div class="container-fluid">
+	<button class="btn btn-info" data-toggle="modal" data-target="#modal1"> Click Here to See Tasks </button>
+	<div class="modal fade" id="modal1">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button class="close" data-dismiss="modal">&times;</button>
+					<h3 class="panel-title">Task History<small> a list of todos </small></h3>
+				</div>
+				<div class="modal-body">
+					<ul class="list-group">
+						<li class="list-group-item-text" ng-repeat="task in allTasks | orderBy: ' -reverse'">
+							{{task.name}}
+						</li>
+					</ul>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- <button ng-click="deleteTasks()">Delete</button>  -->
+
 <timer></timer>
+</html>

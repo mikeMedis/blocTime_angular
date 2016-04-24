@@ -1,23 +1,17 @@
-h2 {
-	color: rgba(62, 65, 63, 0.94);
-}
-
 body {
-	font-weight: 100;
-	color: inherit;
 	font-family: 'Righteous';
 	/*color: white;*/
 	min-height: 100%;
 	width: 100%;
 	height: auto;
-	background-image: url(../assets/images/desk_homepage_background.jpg);
+	background-image: url(../assets/images/wrinkled_notebook.jpg);
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
 	background-attachment: fixed;
 }
 
-.time {
+.timer {
 	text-algin: center;
 }
 
@@ -34,6 +28,7 @@ body {
 }
 
 .timer button {
+	font-family: 'Righteous';
 	font-size: 1em;
 	padding: 3%;
 	color: #FFF;
